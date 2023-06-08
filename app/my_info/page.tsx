@@ -19,7 +19,7 @@ function MyInfo() {
         }
         return (
           <div className="Info__Form" key={index}>
-            {keys.map((_, index) =>
+            {keys.map((item, index) =>
               keys[index].includes("Icon") ? (
                 ""
               ) : (
