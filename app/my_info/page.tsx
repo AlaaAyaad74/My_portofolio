@@ -102,4 +102,7 @@ const MyInfoStyle = styled.div`
   span {
     margin-inline-end: 0.4em;
   }
+  @media (max-width: 696px) {
+    margin: 2rem;
+  }
 `;

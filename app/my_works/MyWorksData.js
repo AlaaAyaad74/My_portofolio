@@ -1,12 +1,12 @@
 export default [
   {
     name: "Tesla Clone",
-    image: "./Tesla.png",
+    image: "./Tesla.PNG",
     link: "https://tesla-clone-lovat.vercel.app/",
   },
   {
     name: "National Livre Institute",
-    image: "./institute.png",
+    image: "./institute.PNG",
     link: "https://tesla-clone-lovat.vercel.app/",
   },
   {
