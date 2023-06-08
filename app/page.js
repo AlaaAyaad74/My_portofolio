@@ -1,95 +1,102 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import styled from "styled-components";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <HomeStyle>
+      <title>Alaa Ayaad</title>
+      <div className="container">
+        <h2>Welcome In My Portofolio</h2>
+        <h1>Hey, I'm Alaa Ayaad</h1>
+        <p>FrontEnd - Developer</p>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </HomeStyle>
+  );
 }
+const HomeStyle = styled.div`
+  .container {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: -6px 0 -3px 0;
+    animation-name: animationcenter;
+  }
+  p {
+    text-align: end;
+    margin-inline-end: -2rem;
+    font-style: italic;
+    animation-name: animationright;
+  }
+  h2 {
+    margin-inline-start: -2rem;
+    animation-name: animationleft;
+    font-weight: 400;
+    font-style: italic;
+  }
+  p,
+  h2,
+  h1 {
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+  @media (max-width: 1024px) {
+    order: 3;
+    .container {
+      position: relative !important;
+      order: 3;
+      left: 0;
+      top: 0;
+      width: fit-content;
+      margin: 5rem auto;
+    }
+    p,
+    h2,
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+    h2 {
+      margin-inline-start: 0;
+    }
+  }
+  @keyframes animationleft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes animationright {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes animationcenter {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+`;
+/*cS*/
