@@ -16,10 +16,11 @@ function MyInfo() {
         {
           Values = Object.values(item);
           keys = Object.keys(item);
+          console.log(keys);
         }
         return (
           <div className="Info__Form" key={index}>
-            {keys.map((item, index) =>
+            {[keys].map((_, index) =>
               keys[index].includes("Icon") ? (
                 ""
               ) : (
