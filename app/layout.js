@@ -1,7 +1,9 @@
+"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Aside from "../components/Aside";
-import Header from '../components/Header'
+import Header from "../components/Header";
+import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -10,18 +12,30 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  },[]);
   return (
     <html lang="en">
       <head>
         <title>Alaa Ayaad</title>
       </head>
-      <body>
-        <Aside />
-        <div className="main">
-          <Header />
-          <div className="res__div">{children}</div>
-        </div>
-      </body>
+
+      {loading ? (
+        <p>loading....</p>
+      ) : (
+        <body>
+          <Aside />
+          <div className="main">
+            <Header />
+            <div className="res__div">{children}</div>
+          </div>
+        </body>
+      )}
     </html>
   );
 }
