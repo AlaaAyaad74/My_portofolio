@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Aside from "../components/Aside";
 import Header from "../components/Header";
+import Spinner from "../components/spinner/Spinner";
 import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
   return (
     <html lang="en">
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
       </head>
 
       {loading ? (
-        <p>loading....</p>
+        <Spinner />
       ) : (
         <body>
           <Aside />
