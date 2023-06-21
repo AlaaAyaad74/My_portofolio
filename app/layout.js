@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1700);
   }, []);
   return (
     <html lang="en">
