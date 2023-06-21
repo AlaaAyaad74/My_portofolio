@@ -62,7 +62,7 @@ function Header() {
           }}
         >
           {state === false ? (
-            <MenuIcon />
+            <MenuIcon className={classes.Icon} />
           ) : (
             <CloseIcon
               style={{
