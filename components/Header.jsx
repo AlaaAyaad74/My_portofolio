@@ -49,7 +49,7 @@ function Header() {
             </Link>
           </li>
           <li onClick={() => setState(!state)}>
-            <Link href="#" id={classes.LOGIN}>
+            <Link href="/login_" id={classes.LOGIN}>
               EDIT
             </Link>
           </li>

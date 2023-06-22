@@ -5,6 +5,7 @@ import Aside from "../components/Aside";
 import Header from "../components/Header";
 import Spinner from "../components/spinner/Spinner";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
       setLoading(false);
     }, 1700);
   }, []);
+  const router = usePathname();
+  const activePath = router.slice(1, router.length);
   return (
     <html lang="en">
       <head>
@@ -28,6 +31,11 @@ export default function RootLayout({ children }) {
 
       {loading ? (
         <Spinner />
+      ) : activePath.endsWith("_") ? (
+        <body>
+        
+          {children}
+        </body>
       ) : (
         <body>
           <Aside />
