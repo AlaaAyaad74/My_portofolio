@@ -7,23 +7,26 @@ import { useRouter } from "next/navigation";
 function Login() {
   const router = useRouter();
   const emailRef = useRef(null);
+  const spanRef = useRef(null);
   return (
     <LoginStyle>
       <h1>LOGIN</h1>
       <form>
         <label htmlFor="email">Email</label>
         <input type="email" id="email" ref={emailRef} />
-        <span className="Incorect">Incorect Email</span>
+        <span ref={spanRef} className="Incorect">
+          Incorrect Email..
+        </span>
         <label htmlFor="password">Password</label>
         <input type="password" id="password" />
-        <span className="Incorect">Incorect Password</span>
+        <span className="Incorect">Incorrect Password..</span>
         <button
           type="submit"
           onClick={(event) => {
             event.preventDefault();
             emailRef.current.value === "alaaayad32@gmail.com"
               ? router.push("/")
-              : "";
+              : spanRef.current.classList.add("animation");
           }}
         >
           Login
@@ -97,11 +100,13 @@ const LoginStyle = styled.div`
     width: 93%;
     font-weight: 600;
     transform: translateY(-100%);
+    margin-bottom: 15px;
+  }
+  .animation {
     animation-name: handleErrors;
     animation-duration: 1s;
-    animation-iteration-count: 3;
-
-    margin-bottom: 15px;
+    animation-iteration-count: 1;
+    transform: translateY(0);
   }
   @media (max-width: 330px) {
     width: 96%;
