@@ -62,7 +62,7 @@ const LoginStyle = styled.div`
   a,
   button {
     display: inline-block;
-    width: 96%;
+    width: 94%;
     font-size: 1.2rem;
   }
   label {
