@@ -55,7 +55,6 @@ const LoginStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 282px;
   }
 
   label,
@@ -65,10 +64,13 @@ const LoginStyle = styled.div`
     display: inline-block;
     width: 94%;
     font-size: 1.2rem;
+    font-family: Open Sans;
   }
   label {
     font-size: 1.2rem;
     font-weight: 500;
+    height: auto;
+    margin-bottom: 1px;
   }
   input {
     height: 30px;
@@ -101,7 +103,7 @@ const LoginStyle = styled.div`
     width: 93%;
     font-weight: 600;
     transform: translateY(-100%);
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
   .animation {
     animation-name: handleErrors;
