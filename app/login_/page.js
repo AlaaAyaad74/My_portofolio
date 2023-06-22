@@ -12,14 +12,18 @@ function Login() {
     <LoginStyle>
       <h1>LOGIN</h1>
       <form>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" ref={emailRef} />
-        <span ref={spanRef} className="Incorect">
-          Incorrect Email..
-        </span>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" />
-        <span className="Incorect">Incorrect Password..</span>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" ref={emailRef} />
+          <span ref={spanRef} className="Incorect">
+            Incorrect Email..
+          </span>
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input type="password" id="password" />
+          <span className="Incorect">Incorrect Password..</span>
+        </div>
         <button
           type="submit"
           onClick={(event) => {
@@ -52,6 +56,10 @@ const LoginStyle = styled.div`
     text-align: center;
   }
   form {
+    align-items: center;
+  }
+  form > div {
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,7 +78,6 @@ const LoginStyle = styled.div`
     font-size: 1.2rem;
     font-weight: 500;
     height: auto;
-    margin-bottom: 1px;
   }
   input {
     height: 30px;
@@ -87,7 +94,7 @@ const LoginStyle = styled.div`
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
   a:hover,
   button:hover {
