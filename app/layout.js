@@ -33,7 +33,6 @@ export default function RootLayout({ children }) {
         <Spinner />
       ) : activePath.endsWith("_") ? (
         <body>
-        
           {children}
         </body>
       ) : (

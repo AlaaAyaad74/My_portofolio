@@ -29,7 +29,7 @@ function Login() {
           onClick={(event) => {
             event.preventDefault();
             emailRef.current.value === "alaaayad32@gmail.com"
-              ? router.push("/")
+              ? router.push("/dashboard_")
               : spanRef.current.classList.add("animation");
           }}
         >
