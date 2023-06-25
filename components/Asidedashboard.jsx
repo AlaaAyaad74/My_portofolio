@@ -87,7 +87,7 @@ const AsidedashboardStyle = styled.div`
       justify-content: space-between;
     }
     li {
-      width: 150px;
+      width: 151px;
     }
   }
   @media screen and (min-width: 400px) and (max-width: 1024px) {

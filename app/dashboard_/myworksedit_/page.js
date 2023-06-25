@@ -5,10 +5,10 @@ import Asidedashboard from "../../../components/Asidedashboard";
 function page() {
   return (
     <MainpageStyle>
-      <Asidedashboard />
       <div className="container">
-        <h1>EDIT MY Works</h1>
+        <h1>EDIT MY WORKS</h1>
       </div>
+      <Asidedashboard />
     </MainpageStyle>
   );
 }
