@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Spinner from "../components/spinner/Spinner";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Asidedashboard from "../components/Asidedashboard";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -32,8 +33,11 @@ export default function RootLayout({ children }) {
       {loading ? (
         <Spinner />
       ) : activePath.endsWith("_") ? (
-        <body>
-          {children}
+        <body className="flex__reverse">
+          {activePath.includes("login_") ? "" : <Asidedashboard />}
+          <div className="main">
+            <div className="res__div">{children}</div>
+          </div>
         </body>
       ) : (
         <body>

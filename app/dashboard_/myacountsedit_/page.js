@@ -8,7 +8,7 @@ function page() {
       <div className="container">
         <h1>EDIT MY ACCOUNTS</h1>
       </div>
-      <Asidedashboard />
+    
     </MainpageStyle>
   );
 }

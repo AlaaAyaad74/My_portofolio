@@ -26,4 +26,7 @@ a {
   .res__div {
     order: 3;
   }
+  .flex__reverse{
+    flex-direction: column-reverse;
+  }
 }
