@@ -24,7 +24,7 @@ function Dashboard() {
             </li>
           </ul>
         </div> */}
-        <Asidedashboard />
+      
         <div className="container">
           <div
             style={{
