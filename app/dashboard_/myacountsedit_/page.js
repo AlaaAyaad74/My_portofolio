@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import MainpageStyle from "../../../components/styles/MainpageStyle";
-import db  from "../../../components/datafirebase/config";
+// import db  from "../../../components/datafirebase/config";
 // import { onValue, ref } from "firebase/database";
-import axios from "axios";
-import { getDatabase, ref, child, get } from "firebase/database";
+// import axios from "axios";
+// import { getDatabase, ref, child, get } from "firebase/database";
 function page() {
   // useEffect(() => {
     // const starCountRef = ref(db, "allData/");
@@ -30,17 +30,17 @@ function page() {
     // };
 
   // }, []);
-  const dbRef = ref(getDatabase());
-get(child(dbRef,'/allData')).then((snapshot) => {
-  if (snapshot.exists()) {
-    const data=snapshot.val();
-    console.log(data);
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
+//   const dbRef = ref(getDatabase());
+// get(child(dbRef,'/allData')).then((snapshot) => {
+//   if (snapshot.exists()) {
+//     const data=snapshot.val();
+//     console.log(data);
+//   } else {
+//     console.log("No data available");
+//   }
+// }).catch((error) => {
+//   console.error(error);
+// });
   return (
     <MainpageStyle>
       <div className="container">

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import MainpageStyle from "../../../components/styles/MainpageStyle";
-import Asidedashboard from "../../../components/Asidedashboard";
+// import Asidedashboard from "../../../components/Asidedashboard";
 import FormdashboardStyle from "../../../components/styles/FormdashboardStyle";
 function Myinfo() {
   return (
