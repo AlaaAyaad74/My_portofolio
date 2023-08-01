@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import INFODATA from "./InfoData";
+// import INFODATA from "./InfoData";
+import { sendData } from "../../components/datafirebase/config";
 /* Icons Imports*/
 
 function MyInfo() {
@@ -10,53 +11,67 @@ function MyInfo() {
   let keys = {};
 
   // const [Loading, setLoading] = useState(false);
+  let infoDataArray = sendData();
+  console.log(
+    infoDataArray?.infoData.map(
+      (item) => Object.keys(item).filter(item=>!item.endsWith('Image')) 
+    ),
+    "Array"
+  );
+
   return (
     <MyInfoStyle>
-      {INFODATA.map((item, index) => {
-        {
-          Values = Object.values(item);
-          keys = Object.keys(item);
-          console.log(keys);
-        }
-        return (
-          <div className="Info__Form" key={index}>
-            {[keys].map((_, index) =>
-              keys[index].includes("Icon") ? (
-                ""
-              ) : (
-                <div key={index} className="Card__Info" ref={gridRef}>
-                  {typeof Values[index] !== "object" ? (
-                    <div key={index}>
-                      {" "}
-                      <p>
-                        <span>{item.Icon}</span>
-                        {keys[index].replaceAll("_", " ")}
-                      </p>
-                      <h3 className="Info__data__title">{Values[index]}</h3>
-                    </div>
-                  ) : (
-                    <div key={index}>
-                      <p>
+      {infoDataArray?.infoData
+        .filter((item) => !item.ProfileImage)
+        .map((item, index) => {
+          {
+            Values = Object.values(item);
+            keys = Object.keys(item);
+            console.log(keys);
+          }
+          return (
+            <div className="Info__Form" key={index}>
+              {[keys].map((_, index) =>
+                keys[index].includes("Icon") ? (
+                  ""
+                ) : (
+                  <div key={index} className="Card__Info" ref={gridRef}>
+                    {typeof Values[index] !== "object" ? (
+                      <div key={index}>
                         {" "}
-                        <span>{item.Icon}</span>
-                        {keys[index].replaceAll("_", " ")}
-                      </p>
-                      <ul>
-                        {/* { gridRef.current.add('wide')} */}
-                        {Values[index].map((item) => (
-                          <li className="Info__data__title" key={item}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )
-            )}
-          </div>
-        );
-      })}{" "}
+                        <p>
+                          <span>
+                            <img src={`${item.icon}`} />
+                          </span>
+                          {keys[index].replaceAll("_", " ")}
+                        </p>
+                        <h3 className="Info__data__title">{Values[index]}</h3>
+                      </div>
+                    ) : (
+                      <div key={index}>
+                        <p>
+                          {" "}
+                          <span>
+                            <img src={`${item.icon}`} />
+                          </span>
+                          {keys[index].replaceAll("_", " ")}
+                        </p>
+                        <ul>
+                          {/* { gridRef.current.add('wide')} */}
+                          {Values[index].map((item) => (
+                            <li className="Info__data__title" key={item}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
+            </div>
+          );
+        })}{" "}
     </MyInfoStyle>
   );
 }
@@ -87,6 +102,7 @@ const MyInfoStyle = styled.div`
     display: flex;
     font-size: 1.2rem;
     font-weight: 700;
+    align-items: center;
   }
   ul {
     display: flex;
@@ -101,6 +117,9 @@ const MyInfoStyle = styled.div`
   }
   span {
     margin-inline-end: 0.4em;
+  }
+  span img {
+    width: 30px;
   }
   @media (max-width: 696px) {
     margin: 2rem;
