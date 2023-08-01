@@ -25,13 +25,13 @@ let data;
 function sendData() {
  
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  // const db = getFirestore(app);
   const dbRef = ref(getDatabase());
   get(child(dbRef, "/allData"))
     .then((snapshot) => {
       if (snapshot.exists()) {
         data = snapshot.val();
-        console.log(data.infoData.Name);
+        // console.log(data.infoData.Name);
         return data;
       } else {
         console.log("No data available");

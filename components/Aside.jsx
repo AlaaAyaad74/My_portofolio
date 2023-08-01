@@ -15,6 +15,7 @@ function Aside() {
     ? (shortName = shortName[0] + " " + shortName[shortName.length - 1])
     : "";
   let job = data?.infoData.find((item) => item.hasOwnProperty("Job"))?.Job;
+  
   let profile__Image = data?.infoData.find((item) =>
     item.hasOwnProperty("ProfileImage")
   ).ProfileImage;
@@ -25,7 +26,6 @@ function Aside() {
         <div>
           <h2 className={classes.flex} onClick={changeStyle}>
             {shortName}
-
             <span className={classes.Edit__Icon} ref={editRef}>
               <CiEdit />
             </span>
