@@ -41,7 +41,7 @@ function MyInfo() {
                         {" "}
                         <p>
                           <span>
-                            <img src={`${item.icon}`} />
+                            <img src={`${item.icon}`} alt='icon' />
                           </span>
                           {keys[index].replaceAll("_", " ")}
                         </p>
