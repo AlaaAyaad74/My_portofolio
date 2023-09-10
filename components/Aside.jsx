@@ -15,7 +15,7 @@ function Aside() {
     ? (shortName = shortName[0] + " " + shortName[shortName.length - 1])
     : "";
   let job = data?.infoData.find((item) => item.hasOwnProperty("Job"))?.Job;
-  
+
   let profile__Image = data?.infoData.find((item) =>
     item.hasOwnProperty("ProfileImage")
   ).ProfileImage;

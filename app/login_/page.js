@@ -7,7 +7,9 @@ import { useRouter } from "next/navigation";
 function Login() {
   const router = useRouter();
   const emailRef = useRef(null);
-  const spanRef = useRef(null);
+  const passRef = useRef(null);
+  const spanRefPass = useRef(null);
+  const spanRefEmail = useRef(null);
   return (
     <LoginStyle>
       <h1>LOGIN</h1>
@@ -15,22 +17,31 @@ function Login() {
         <div>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" ref={emailRef} />
-          <span ref={spanRef} className="Incorect">
+          <span ref={spanRefEmail} className="Incorect">
             Incorrect Email..
           </span>
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" />
-          <span className="Incorect">Incorrect Password..</span>
+          <input type="password" id="password" ref={passRef} />
+          <span ref={spanRefPass} className="Incorect">
+            Incorrect Password..
+          </span>
         </div>
         <button
           type="submit"
           onClick={(event) => {
             event.preventDefault();
-            emailRef.current.value === "alaaayad32@gmail.com"
-              ? router.push("/dashboard_")
-              : spanRef.current.classList.add("animation");
+            if (
+              emailRef.current.value === "alaaayad32@gmail.com" &&
+              passRef.current.value === "<coder/>2274"
+            ) {
+              router.push("/dashboard_");
+            } else {
+              spanRefPass.current.classList.add("animation");
+              spanRefEmail.current.classList.add("animation");
+            }
+            // ?: ;
           }}
         >
           Login
