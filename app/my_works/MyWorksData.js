@@ -7,7 +7,7 @@ export default [
   {
     name: "National Livre Institute",
     image: "./institute.PNG",
-    link: "https://tesla-clone-lovat.vercel.app/",
+    link: "http://nli.menofia.edu.eg/",
   },
   {
     name: "Amazon Clone",
