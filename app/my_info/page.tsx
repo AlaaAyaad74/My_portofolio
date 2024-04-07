@@ -13,8 +13,8 @@ function MyInfo() {
   // const [Loading, setLoading] = useState(false);
   let infoDataArray = sendData();
   console.log(
-    infoDataArray?.infoData.map(
-      (item) => Object.keys(item).filter(item=>!item.endsWith('Image')) 
+    infoDataArray?.infoData.map((item) =>
+      Object.keys(item).filter((item) => !item.endsWith("Image"))
     ),
     "Array"
   );
@@ -41,7 +41,7 @@ function MyInfo() {
                         {" "}
                         <p>
                           <span>
-                            <img src={`${item.icon}`} alt='icon' />
+                            <img src={`${item.icon}`} alt="icon" />
                           </span>
                           {keys[index].replaceAll("_", " ")}
                         </p>
@@ -121,7 +121,11 @@ const MyInfoStyle = styled.div`
   span img {
     width: 30px;
   }
+
   @media (max-width: 696px) {
-    margin: 2rem;
+    margin: 2rem 1rem;
+    .Card__Info {
+    padding: 1em 0.5em;
+  }
   }
 `;
