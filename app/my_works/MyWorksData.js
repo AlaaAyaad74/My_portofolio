@@ -14,4 +14,9 @@ export default [
     image: "./amazon.png",
     link: "https://amazon-clone-xi-virid.vercel.app/",
   },
+  {
+    name: "To Do List",
+    image: "./todolist.png",
+    link: "https://todo-list-three-woad.vercel.app/",
+  },
 ];
