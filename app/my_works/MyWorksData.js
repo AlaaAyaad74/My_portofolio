@@ -16,7 +16,7 @@ export default [
   },
   {
     name: "To Do List",
-    image: "./todolist.png",
+    image: "./todolist.PNG",
     link: "https://todo-list-three-woad.vercel.app/",
   },
 ];
