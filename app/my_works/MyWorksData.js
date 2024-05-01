@@ -12,7 +12,7 @@ export default [
   {
     name: "Amazon Clone",
     image: "./amazon.png",
-    link: "https://amazon-clone-xi-virid.vercel.app/",
+    link: "https://amazon-clone-psi-neon.vercel.app/",
   },
   {
     name: "To Do List",
