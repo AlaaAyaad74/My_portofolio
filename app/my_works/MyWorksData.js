@@ -19,4 +19,9 @@ export default [
     image: "./todolist.PNG",
     link: "https://todo-list-three-woad.vercel.app/",
   },
+  {
+    name: "Iphone 15",
+    image: "./i-phone15.PNG",
+    link: "https://i-phone15-theta.vercel.app/",
+  },
 ];
