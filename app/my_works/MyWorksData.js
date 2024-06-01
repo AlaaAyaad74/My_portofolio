@@ -1,5 +1,10 @@
 export default [
   {
+    name: "Land Interiors",
+    image: "./coberg.png",
+    link: "https://cobirg-task.vercel.app/",
+  },
+  {
     name: "Iphone 15",
     image: "./i-phone15.PNG",
     link: "https://i-phone15-theta.vercel.app/",
