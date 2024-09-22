@@ -1,5 +1,10 @@
 export default [
   {
+    name: "Click Shop",
+    image: "./clickshop.png",
+    link: "https://e-commerce-click-an35.vercel.app/",
+  },
+  {
     name: "Land Interiors",
     image: "./coberg.png",
     link: "https://cobirg-task.vercel.app/",
