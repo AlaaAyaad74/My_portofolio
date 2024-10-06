@@ -1,0 +1,52 @@
+.main {
+  margin: 2rem 4rem;
+}
+
+.Info__Form {
+  width: 100%;
+  gap: 2rem;
+}
+.Info__data__title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.main h3,
+.main ul {
+  margin-inline-start: 2rem;
+}
+
+.Card__Info {
+  padding: 1em;
+  /* border: 1px solid black; */
+}
+.main p {
+  margin-bottom: 0.5em;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 700;
+  align-items: center;
+}
+.main ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.main li {
+  padding: 0.5em 1em;
+  background-color: #ddd;
+}
+.main span {
+  margin-inline-end: 0.4em;
+}
+.main span img {
+  width: 30px;
+}
+
+@media (max-width: 696px) {
+  .main {
+    margin: 2rem 1rem;
+  }
+  .Card__Info {
+    padding: 1em 0.5em;
+  }
+}

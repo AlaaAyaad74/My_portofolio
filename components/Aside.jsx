@@ -22,7 +22,7 @@ function Aside() {
   return (
     <div className={classes.container}>
       <div className={classes.personal__image}>
-        <img src={`${profile__Image}`} alt="profile" />
+        <img src={profile__Image} alt="profile" loading="lazy" />
         <div>
           <h2 className={classes.flex} onClick={changeStyle}>
             {shortName}
