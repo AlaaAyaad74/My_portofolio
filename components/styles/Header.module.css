@@ -5,6 +5,7 @@
   position: sticky;
   background-color: white;
   top: 0;
+  z-index: 999;
 }
 .nav__links {
   padding: 1rem 2rem;
