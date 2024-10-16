@@ -1,19 +1,21 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 
-import { sendData } from "../../components/datafirebase/config";
+
 
 import styles from "./myInfo.module.css";
+import { DataContext } from "../layout";
 function MyInfo() {
   const gridRef = useRef(null);
   let Values = {};
   let keys = {};
 
-  let infoDataArray = sendData();
+  let data = useContext(DataContext);
+  console.log(data);
 
   return (
     <section className={styles.main}>
-      {infoDataArray?.infoData
+      {data?.infoData
         .filter((item) => !item.ProfileImage)
         .map((item, index) => {
           {

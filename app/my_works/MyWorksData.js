@@ -17,7 +17,7 @@ export default [
   {
     name: "National Livre Institute",
     image: "./institute.PNG",
-    link: "http://nli.menofia.edu.eg/",
+    link: "https://nli.menofia.edu.eg/en",
   },
   {
     name: "Tesla Clone",

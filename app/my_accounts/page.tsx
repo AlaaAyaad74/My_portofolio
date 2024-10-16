@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { sendData } from "../../components/datafirebase/config";
 import MainpageStyle from "../../components/styles/CommonformStyle";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { DataContext } from "../layout";
 function Myaccounts() {
-  let accountsData = sendData();
+  let accountsData = useContext(DataContext);
 
   return (
     <MainpageStyle>
@@ -20,7 +21,7 @@ function Myaccounts() {
                   <p>
                     <Link href={item.link}>
                       <span>
-                        <img src={`${item.image}`} alt="icon" />
+                        <img src={item.image} alt="icon" />
                       </span>
                       {item.caption}
                     </Link>

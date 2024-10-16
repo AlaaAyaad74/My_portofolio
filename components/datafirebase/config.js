@@ -1,13 +1,7 @@
-// Import the functions you need from the SDKs you need
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
 import { getDatabase, ref, child, get } from "firebase/database";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
+// Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBPx2iSnVQmEBMe32JaQNOmBsD1Gg2hBXo",
@@ -21,28 +15,22 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-let data;
-function sendData() {
- 
-  const app = initializeApp(firebaseConfig);
-  // const db = getFirestore(app);
-  const dbRef = ref(getDatabase());
-  get(child(dbRef, "/allData"))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        data = snapshot.val();
-        // console.log(data.infoData.Name);
-        return data;
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-    return data;
+const app = initializeApp(firebaseConfig);
+const dbRef = ref(getDatabase(app));
+
+async function sendData() {
+  try {
+    const snapshot = await get(child(dbRef, "/allData"));
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
 
 export { sendData };
-// const analytics = getAnalytics(app);
-// export default db;

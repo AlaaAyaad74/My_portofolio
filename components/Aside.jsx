@@ -1,13 +1,14 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import classes from "./styles/Aside.module.css";
 import { CiEdit } from "react-icons/ci";
-import { sendData } from "./datafirebase/config";
+import { DataContext } from "../app/layout";
+// import { sendData } from "./datafirebase/config";
 function Aside() {
   const changeStyle = () =>
     (editRef.current.className = classes.Toggle__Edit__Button);
   const editRef = useRef(0);
-  let data = sendData();
+  let data = useContext(DataContext);
   // const { name } = data?.infoData;
   let name = data?.infoData.find((item) => item.hasOwnProperty("Name")).Name;
   let shortName = name?.split(" ");

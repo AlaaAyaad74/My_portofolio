@@ -1,9 +1,11 @@
-// "use client";
+"use client";
 
-import { sendData } from "../components/datafirebase/config";
+import { useContext } from "react";
+// import { sendData } from "../components/datafirebase/config";
 import styles from "../components/styles/MainpageStyle.module.css";
+import { DataContext } from "./layout";
 export default function Home() {
-  let data = sendData();
+  let data = useContext(DataContext);
   // const { name } = data?.infoData;
   let job = data?.infoData[2].Job;
   let name = data?.infoData[0].Name;
