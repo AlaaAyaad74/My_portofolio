@@ -1,5 +1,10 @@
 export default [
   {
+    name: "Bling Weddings",
+    image: "/bling.webp",
+    link: "https://www.bling-weddings.com/",
+  },
+  {
     name: "Click Shop",
     image: "./clickshop.png",
     link: "https://e-commerce-click-an35.vercel.app/",
