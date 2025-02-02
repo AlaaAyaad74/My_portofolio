@@ -43,7 +43,7 @@ function Dashboard() {
                 Change Image
               </label>
             </div>
-            <img src="/profile.jpeg" alt="profile Image" />
+            <img src="/profile.webp" alt="profile Image" />
           </div>
         </div>
         <h2>Welcome In</h2>
