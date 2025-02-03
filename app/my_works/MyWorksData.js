@@ -1,5 +1,10 @@
 export default [
   {
+name:"GONOVO",
+image:"./gonovo.webp",
+link:"https://gonovo.tech/",
+  },
+  {
     name: "Scaffolding",
     image: "./scaffolding.webp",
     link: "https://thescaffolding.co.uk/",
